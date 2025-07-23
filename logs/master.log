@@ -1,4 +1,0 @@
-2025-07-23 17:53:50,142 [INFO] test_login_with_valid_credentials[chrome] - Entering username
-2025-07-23 17:53:51,020 [INFO] test_login_with_valid_credentials[chrome] - Entering password
-2025-07-23 17:53:51,114 [INFO] test_login_with_valid_credentials[chrome] - Clicking login button
-2025-07-23 17:53:52,903 [INFO] test_login_with_valid_credentials[chrome] - User is logged in successfully
