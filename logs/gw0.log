@@ -1,0 +1,5 @@
+2025-07-21 18:40:38,748 [INFO] test_validate_page_url[chrome] - Entering username
+2025-07-21 18:40:39,435 [INFO] test_validate_page_url[chrome] - Entering password
+2025-07-21 18:40:39,567 [INFO] test_validate_page_url[chrome] - Clicking login button
+2025-07-21 18:40:41,583 [INFO] test_validate_page_url[chrome] - Login success verified with valid credentials
+2025-07-21 18:40:41,596 [INFO] test_validate_page_url[chrome] - Dashboard page URL verified successfully

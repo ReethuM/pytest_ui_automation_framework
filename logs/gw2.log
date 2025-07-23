@@ -1,0 +1,5 @@
+2025-07-21 18:40:38,722 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Entering username
+2025-07-21 18:40:39,434 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Entering password
+2025-07-21 18:40:39,592 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Clicking login button
+2025-07-21 18:40:41,581 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Login success verified with valid credentials
+2025-07-21 18:40:41,679 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Dashboard page contains widget: Employees on Leave Today

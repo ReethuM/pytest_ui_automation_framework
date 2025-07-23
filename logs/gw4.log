@@ -1,0 +1,52 @@
+2025-07-21 18:40:38,748 [INFO] test_is_my_plans_widget_visible[chrome] - Entering username
+2025-07-21 18:40:39,462 [INFO] test_is_my_plans_widget_visible[chrome] - Entering password
+2025-07-21 18:40:39,584 [INFO] test_is_my_plans_widget_visible[chrome] - Clicking login button
+2025-07-21 18:40:41,638 [INFO] test_is_my_plans_widget_visible[chrome] - Login success verified with valid credentials
+2025-07-21 18:40:52,130 [ERROR] test_is_my_plans_widget_visible[chrome] - Timeout waiting for element ('xpath', "//p[text()='My Plans']"): Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6ddbae925+77845]
+	GetHandleVerifier [0x0x7ff6ddbae980+77936]
+	(No symbol) [0x0x7ff6dd969cda]
+	(No symbol) [0x0x7ff6dd9c06aa]
+	(No symbol) [0x0x7ff6dd9c095c]
+	(No symbol) [0x0x7ff6dda13d07]
+	(No symbol) [0x0x7ff6dd9e890f]
+	(No symbol) [0x0x7ff6dda10b07]
+	(No symbol) [0x0x7ff6dd9e86a3]
+	(No symbol) [0x0x7ff6dd9b1791]
+	(No symbol) [0x0x7ff6dd9b2523]
+	GetHandleVerifier [0x0x7ff6dde8683d+3059501]
+	GetHandleVerifier [0x0x7ff6dde80bfd+3035885]
+	GetHandleVerifier [0x0x7ff6ddea03f0+3164896]
+	GetHandleVerifier [0x0x7ff6ddbc8c2e+185118]
+	GetHandleVerifier [0x0x7ff6ddbd053f+216111]
+	GetHandleVerifier [0x0x7ff6ddbb72d4+113092]
+	GetHandleVerifier [0x0x7ff6ddbb7489+113529]
+	GetHandleVerifier [0x0x7ff6ddb9e288+10616]
+	(No symbol) [0x0x7ffcc8a4e8d7]
+	RtlUserThreadStart [0x0x7ffcc9b3c34c+44]
+
+2025-07-21 18:40:52,131 [ERROR] test_is_my_plans_widget_visible[chrome] - Widget 'My Plans' not found on the dashboard page - Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6ddbae925+77845]
+	GetHandleVerifier [0x0x7ff6ddbae980+77936]
+	(No symbol) [0x0x7ff6dd969cda]
+	(No symbol) [0x0x7ff6dd9c06aa]
+	(No symbol) [0x0x7ff6dd9c095c]
+	(No symbol) [0x0x7ff6dda13d07]
+	(No symbol) [0x0x7ff6dd9e890f]
+	(No symbol) [0x0x7ff6dda10b07]
+	(No symbol) [0x0x7ff6dd9e86a3]
+	(No symbol) [0x0x7ff6dd9b1791]
+	(No symbol) [0x0x7ff6dd9b2523]
+	GetHandleVerifier [0x0x7ff6dde8683d+3059501]
+	GetHandleVerifier [0x0x7ff6dde80bfd+3035885]
+	GetHandleVerifier [0x0x7ff6ddea03f0+3164896]
+	GetHandleVerifier [0x0x7ff6ddbc8c2e+185118]
+	GetHandleVerifier [0x0x7ff6ddbd053f+216111]
+	GetHandleVerifier [0x0x7ff6ddbb72d4+113092]
+	GetHandleVerifier [0x0x7ff6ddbb7489+113529]
+	GetHandleVerifier [0x0x7ff6ddb9e288+10616]
+	(No symbol) [0x0x7ffcc8a4e8d7]
+	RtlUserThreadStart [0x0x7ffcc9b3c34c+44]
+
