@@ -9,17 +9,17 @@ logger = logging.getLogger("test_logger")
 
 
 class BasePage:
-    def __init__(self, driver):
+    def __init__(self, driver, timeout=10):
         self.driver = driver
-        self.TIMEOUT = 10
+        self.TIMEOUT = timeout
 
     def wait_for_element(self, locator):
         try:
             element = WebDriverWait(self.driver, self.TIMEOUT).until(
                 EC.visibility_of_element_located(locator))
             return element
-        except TimeoutException as e:
-            logger.error(f"Timeout waiting for element {locator}: {e}")
+        except TimeoutException:
+            logger.error(f"Timeout waiting for element {locator}")
             raise
 
     def click(self, locator):

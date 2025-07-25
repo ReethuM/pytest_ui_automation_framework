@@ -1,7 +1,7 @@
 import logging
 import time
 
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchElementException
 
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
@@ -19,8 +19,8 @@ class DashboardPage(BasePage):
     def is_widget_visible(self, widget_name):
         try:
             locator = (self.WIDGET_LOCATOR[0], self.WIDGET_LOCATOR[1].format(widget_name))
-            element = self.wait_for_element(locator)
+            element = self.driver.find_element(*locator)
             return element.is_displayed()
-        except TimeoutException as e:
-            logger.error(f"Widget '{widget_name}' not found on the dashboard page - {str(e)}")
-            return False
+        except NoSuchElementException:
+            logger.error(f"Widget '{widget_name}' not found on the dashboard page")
+            raise
