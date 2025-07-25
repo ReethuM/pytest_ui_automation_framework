@@ -6,43 +6,41 @@ from selenium import webdriver
 from pytest_html import extras
 
 from helpers.user_login import perform_valid_login
-from pages.dashboard_page import DashboardPage
 from utils.config_loader import load_config
 from utils.logger_filter import TestNameFilter
 from utils.screenshot_utils import take_screenshot
 
 test_name_filter = TestNameFilter()
+logger = logging.getLogger("test_logger")
 
 
 @pytest.fixture(scope="session")
-def config():
+def env_config():
     return load_config()
 
 
 @pytest.fixture(params=["chrome", "edge"])
-def browser(request):
-    return request.param
-
-
-@pytest.fixture
-def driver(browser, config):
-    if browser == "chrome":
+def driver(request, env_config):
+    logger.info("------ Starting browser session ------")
+    if request.param == "chrome":
         driver = webdriver.Chrome()
-    # elif browser == "edge":
-    #     driver = webdriver.Edge()
+    elif request.param == "edge":
+        driver = webdriver.Edge()
     else:
-        pytest.skip(f"Unsupported browser: {browser}")
+        pytest.skip(f"Unsupported browser: {request.param}")
         return
 
-    driver.get(config['BASE_URL'])
+    logger.info(f"Navigating to: {env_config['BASE_URL']}")
+    driver.get(env_config['BASE_URL'])
     driver.maximize_window()
     yield driver
+    logger.info("------ Closing browser session ------")
     driver.quit()
 
 
 @pytest.fixture
-def dashboard_page(driver, config):
-    return perform_valid_login(driver, config["USERNAME"], config["PASSWORD"])
+def dashboard_page(driver, env_config):
+    return perform_valid_login(driver, env_config["USERNAME"], env_config["PASSWORD"])
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -59,23 +57,17 @@ def configure_logging(worker_id):
     file_formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(test_name)s - %(message)s")
     file_handler.setFormatter(file_formatter)
     file_handler.addFilter(test_name_filter)
-
     test_logger.addHandler(file_handler)
 
-    # logs from selenium
-    selenium_logger = logging.getLogger("selenium")
-    selenium_logger.setLevel(logging.INFO)
+    # logs from selenium and urllib3
+    sel_handler = logging.FileHandler("logs/selenium.log", mode="w")
+    sel_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s"))
 
-    selenium_log_file = logging.FileHandler("logs/selenium.log", mode="w")
-    selenium_log_format = logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s")
-    selenium_log_file.setFormatter(selenium_log_format)
-
-    selenium_logger.addHandler(selenium_log_file)
-
-    # logs for urllib3
-    urllib3_logger = logging.getLogger("urllib3")
-    urllib3_logger.setLevel(logging.WARNING)
-    urllib3_logger.addHandler(selenium_log_file)
+    for name in ["selenium", "urllib3"]:
+        sel_urllib3_logger = logging.getLogger(name)
+        sel_urllib3_logger.setLevel(logging.WARNING)
+        sel_urllib3_logger.addHandler(sel_handler)
+        sel_urllib3_logger.propagate = False
 
 
 # Hook to set test name before each test

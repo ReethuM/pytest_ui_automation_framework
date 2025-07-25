@@ -5,7 +5,7 @@ import pytest
 logger = logging.getLogger("test_logger")
 
 
-@pytest.mark.ui
+@pytest.mark.dashboard
 class TestDashboard:
 
     def test_validate_page_url(self, dashboard_page):

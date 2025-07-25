@@ -1,4 +1,4 @@
 BASE_URL: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
 USERNAME: "Admin"
-encrypted_password: "gAAAAABogNQoeDOnNv-9tVZqHSnvsy0agCi6rwIO3HDGRCrSbtJLsl8JquO_NdzqUHvpEhuCpIHMYlUH43NVxzCcJPNmmSgFtw=="
-browser: "chrome"
+encrypted_password: "gAAAAABogNzXBNlmSVWPVK7nCME5z1B33ruV0z9wWnVaFXXktyPTvNX1UhJR9AW5t3FBlgLOb-vnYEfVeTsOR4B8bGcEaSgABw=="
+#browser: "chrome"

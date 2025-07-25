@@ -1,0 +1,80 @@
+2025-07-25 18:24:31,915 [INFO] test_validate_page_url[chrome] - ------ Starting browser session ------
+2025-07-25 18:24:33,172 [INFO] test_validate_page_url[chrome] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:24:37,694 [INFO] test_validate_page_url[chrome] - User is entering the username
+2025-07-25 18:24:38,898 [INFO] test_validate_page_url[chrome] - User is entering the password
+2025-07-25 18:24:39,026 [INFO] test_validate_page_url[chrome] - User clicks on the login button
+2025-07-25 18:24:40,787 [INFO] test_validate_page_url[chrome] - User is logged in successfully
+2025-07-25 18:24:40,794 [INFO] test_validate_page_url[chrome] - Dashboard page URL verified successfully
+2025-07-25 18:24:40,796 [INFO] test_validate_page_url[chrome] - ------ Closing browser session ------
+2025-07-25 18:24:43,011 [INFO] test_validate_page_url[edge] - ------ Starting browser session ------
+2025-07-25 18:24:44,529 [INFO] test_validate_page_url[edge] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:24:48,469 [INFO] test_validate_page_url[edge] - User is entering the username
+2025-07-25 18:24:49,168 [INFO] test_validate_page_url[edge] - User is entering the password
+2025-07-25 18:24:49,260 [INFO] test_validate_page_url[edge] - User clicks on the login button
+2025-07-25 18:24:51,028 [INFO] test_validate_page_url[edge] - User is logged in successfully
+2025-07-25 18:24:51,036 [INFO] test_validate_page_url[edge] - Dashboard page URL verified successfully
+2025-07-25 18:24:51,038 [INFO] test_validate_page_url[edge] - ------ Closing browser session ------
+2025-07-25 18:24:53,228 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - ------ Starting browser session ------
+2025-07-25 18:24:54,581 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:24:58,835 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - User is entering the username
+2025-07-25 18:24:59,468 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - User is entering the password
+2025-07-25 18:24:59,649 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - User clicks on the login button
+2025-07-25 18:25:01,608 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - User is logged in successfully
+2025-07-25 18:25:01,635 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - Dashboard page contains widget: Time at Work
+2025-07-25 18:25:01,637 [INFO] test_dashboard_widget_visibility[chrome-Time at Work] - ------ Closing browser session ------
+2025-07-25 18:25:03,855 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - ------ Starting browser session ------
+2025-07-25 18:25:05,177 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:09,361 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - User is entering the username
+2025-07-25 18:25:09,946 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - User is entering the password
+2025-07-25 18:25:10,014 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - User clicks on the login button
+2025-07-25 18:25:11,915 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - User is logged in successfully
+2025-07-25 18:25:11,937 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - Dashboard page contains widget: My Actions
+2025-07-25 18:25:11,938 [INFO] test_dashboard_widget_visibility[chrome-My Actions] - ------ Closing browser session ------
+2025-07-25 18:25:14,120 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - ------ Starting browser session ------
+2025-07-25 18:25:15,383 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:19,533 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - User is entering the username
+2025-07-25 18:25:20,140 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - User is entering the password
+2025-07-25 18:25:20,246 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - User clicks on the login button
+2025-07-25 18:25:22,123 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - User is logged in successfully
+2025-07-25 18:25:22,141 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - Dashboard page contains widget: Employees on Leave Today
+2025-07-25 18:25:22,142 [INFO] test_dashboard_widget_visibility[chrome-Employees on Leave Today] - ------ Closing browser session ------
+2025-07-25 18:25:24,269 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - ------ Starting browser session ------
+2025-07-25 18:25:25,736 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:29,573 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - User is entering the username
+2025-07-25 18:25:30,157 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - User is entering the password
+2025-07-25 18:25:30,236 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - User clicks on the login button
+2025-07-25 18:25:32,072 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - User is logged in successfully
+2025-07-25 18:25:32,086 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - Dashboard page contains widget: Time at Work
+2025-07-25 18:25:32,087 [INFO] test_dashboard_widget_visibility[edge-Time at Work] - ------ Closing browser session ------
+2025-07-25 18:25:34,221 [INFO] test_dashboard_widget_visibility[edge-My Actions] - ------ Starting browser session ------
+2025-07-25 18:25:35,600 [INFO] test_dashboard_widget_visibility[edge-My Actions] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:39,915 [INFO] test_dashboard_widget_visibility[edge-My Actions] - User is entering the username
+2025-07-25 18:25:40,516 [INFO] test_dashboard_widget_visibility[edge-My Actions] - User is entering the password
+2025-07-25 18:25:40,594 [INFO] test_dashboard_widget_visibility[edge-My Actions] - User clicks on the login button
+2025-07-25 18:25:42,390 [INFO] test_dashboard_widget_visibility[edge-My Actions] - User is logged in successfully
+2025-07-25 18:25:42,429 [INFO] test_dashboard_widget_visibility[edge-My Actions] - Dashboard page contains widget: My Actions
+2025-07-25 18:25:42,431 [INFO] test_dashboard_widget_visibility[edge-My Actions] - ------ Closing browser session ------
+2025-07-25 18:25:44,690 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - ------ Starting browser session ------
+2025-07-25 18:25:46,009 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:49,035 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - User is entering the username
+2025-07-25 18:25:49,663 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - User is entering the password
+2025-07-25 18:25:49,741 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - User clicks on the login button
+2025-07-25 18:25:51,526 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - User is logged in successfully
+2025-07-25 18:25:51,542 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - Dashboard page contains widget: Employees on Leave Today
+2025-07-25 18:25:51,544 [INFO] test_dashboard_widget_visibility[edge-Employees on Leave Today] - ------ Closing browser session ------
+2025-07-25 18:25:53,775 [INFO] test_is_my_plans_widget_visible[chrome] - ------ Starting browser session ------
+2025-07-25 18:25:55,090 [INFO] test_is_my_plans_widget_visible[chrome] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:25:59,314 [INFO] test_is_my_plans_widget_visible[chrome] - User is entering the username
+2025-07-25 18:25:59,970 [INFO] test_is_my_plans_widget_visible[chrome] - User is entering the password
+2025-07-25 18:26:00,054 [INFO] test_is_my_plans_widget_visible[chrome] - User clicks on the login button
+2025-07-25 18:26:01,877 [INFO] test_is_my_plans_widget_visible[chrome] - User is logged in successfully
+2025-07-25 18:26:01,889 [ERROR] test_is_my_plans_widget_visible[chrome] - Widget 'My Plans' not found on the dashboard page
+2025-07-25 18:26:02,202 [INFO] test_is_my_plans_widget_visible[chrome] - ------ Closing browser session ------
+2025-07-25 18:26:04,415 [INFO] test_is_my_plans_widget_visible[edge] - ------ Starting browser session ------
+2025-07-25 18:26:05,797 [INFO] test_is_my_plans_widget_visible[edge] - Navigating to: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-07-25 18:26:10,073 [INFO] test_is_my_plans_widget_visible[edge] - User is entering the username
+2025-07-25 18:26:10,669 [INFO] test_is_my_plans_widget_visible[edge] - User is entering the password
+2025-07-25 18:26:10,769 [INFO] test_is_my_plans_widget_visible[edge] - User clicks on the login button
+2025-07-25 18:26:12,523 [INFO] test_is_my_plans_widget_visible[edge] - User is logged in successfully
+2025-07-25 18:26:12,540 [ERROR] test_is_my_plans_widget_visible[edge] - Widget 'My Plans' not found on the dashboard page
+2025-07-25 18:26:12,563 [INFO] test_is_my_plans_widget_visible[edge] - ------ Closing browser session ------
