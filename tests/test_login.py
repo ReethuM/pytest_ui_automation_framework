@@ -1,3 +1,4 @@
+"""This module contains the Login test class."""
 import sys
 import pytest
 
@@ -7,10 +8,12 @@ from pages.login_page import LoginPage
 
 @pytest.mark.login
 class TestLogin:
+    """Class containing the test scenarios of the dashboard page."""
 
     @pytest.mark.smoke
     @pytest.mark.skipif(sys.platform.startswith("linux"), reason="Not supported on Linux")
     def test_login_with_valid_credentials(self, driver, env_config):
+        """Verify login with valid user credentials."""
         UserLoginHelper.perform_valid_login(driver, env_config["USERNAME"], env_config["PASSWORD"])
 
     @pytest.mark.negative
@@ -20,12 +23,13 @@ class TestLogin:
         ("Admin", "")  # empty password
     ])
     def test_login_with_invalid_credentials(self, driver, username, password):
+        """Verify login with invalid user credentials."""
         message = UserLoginHelper.perform_invalid_login(driver, username, password)
-        assert message == "Invalid credentials", f"Expected error message not displayed, got: {message}"
+        assert message == "Invalid credentials", f"Expected error not displayed, got: {message}"
 
     @pytest.mark.negative
     def test_login_with_empty_credentials(self, driver):
-        """Verify login fails with both username and password empty"""
+        """Verify login fails with both username and password empty."""
         UserLoginHelper.perform_invalid_login(driver, "", "")
 
     @pytest.mark.positive
