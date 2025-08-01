@@ -1,12 +1,6 @@
-import logging
-import time
-
 from selenium.common.exceptions import NoSuchElementException
-
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-
-logger = logging.getLogger("test_logger")
 
 
 class DashboardPage(BasePage):
@@ -22,5 +16,5 @@ class DashboardPage(BasePage):
             element = self.driver.find_element(*locator)
             return element.is_displayed()
         except NoSuchElementException:
-            logger.error(f"Widget '{widget_name}' not found on the dashboard page")
+            self.logger.error(f"Widget '{widget_name}' not found on the dashboard page")
             raise
