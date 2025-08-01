@@ -1,8 +1,8 @@
-import logging
-
 import pytest
 
-logger = logging.getLogger("test_logger")
+from utils.logger.logger import LoggerSetup
+
+logger = LoggerSetup.setup_logger()
 
 
 @pytest.mark.dashboard
