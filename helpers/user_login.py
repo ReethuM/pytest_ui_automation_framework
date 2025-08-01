@@ -1,3 +1,4 @@
+"""This module contains the User login helper class."""
 from pages.dashboard_page import DashboardPage
 from pages.login_page import LoginPage
 from utils.logger.logger import LoggerSetup
@@ -6,6 +7,8 @@ logger = LoggerSetup.setup_logger()
 
 
 class UserLoginHelper:
+    """This class contains methods for login"""
+
     @staticmethod
     def login(driver, username, password):
         """Perform login action and return the LoginPage object."""
@@ -18,7 +21,7 @@ class UserLoginHelper:
     @staticmethod
     def perform_valid_login(driver, username, password):
         """Login with valid credentials and return Dashboard page object."""
-        logger.info("User performing login with valid credentials.")
+        logger.info("User performing login with valid credentials")
         user_login = UserLoginHelper.login(driver, username, password)
         assert user_login.is_logged_in(), "Login failed with valid credentials"
         logger.info("User is logged in successfully")

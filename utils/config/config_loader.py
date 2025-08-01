@@ -8,7 +8,7 @@ class ConfigLoader:
 
     @staticmethod
     def load_config():
-        with open("config.yaml") as f:
+        with open("utils/config/config.yaml") as f:
             data = yaml.safe_load(f)
 
         load_dotenv(override=True)

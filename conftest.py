@@ -28,7 +28,7 @@ def driver(request, env_config):
         pytest.skip(f"Unsupported browser: {request.param}")
         return
     logger.info("------ Starting browser session ------")
-    logger.info(f"Navigating to: {env_config['BASE_URL']}")
+    logger.info("Navigating to %s", env_config['BASE_URL'])
     driver.get(env_config['BASE_URL'])
     driver.maximize_window()
     yield driver
