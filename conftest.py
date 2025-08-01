@@ -1,27 +1,25 @@
-import logging
 import os
 import pytest
-
+from datetime import datetime
 from selenium import webdriver
 from pytest_html import extras
 
-from helpers.user_login import perform_valid_login
-from utils.config_loader import load_config
-from utils.logger_filter import TestNameFilter
-from utils.screenshot_utils import take_screenshot
+from helpers.user_login import UserLoginHelper
+from utils.config.config_loader import ConfigLoader
+from utils.test_name_filter import set_test_name
+from utils.screenshot_utils import ScreenshotManager
+from utils.logger.logger import LoggerSetup
 
-test_name_filter = TestNameFilter()
-logger = logging.getLogger("test_logger")
+logger = LoggerSetup.setup_logger()
 
 
 @pytest.fixture(scope="session")
 def env_config():
-    return load_config()
+    return ConfigLoader.load_config()
 
 
 @pytest.fixture(params=["chrome", "edge"])
 def driver(request, env_config):
-    logger.info("------ Starting browser session ------")
     if request.param == "chrome":
         driver = webdriver.Chrome()
     elif request.param == "edge":
@@ -29,7 +27,7 @@ def driver(request, env_config):
     else:
         pytest.skip(f"Unsupported browser: {request.param}")
         return
-
+    logger.info("------ Starting browser session ------")
     logger.info(f"Navigating to: {env_config['BASE_URL']}")
     driver.get(env_config['BASE_URL'])
     driver.maximize_window()
@@ -40,39 +38,14 @@ def driver(request, env_config):
 
 @pytest.fixture
 def dashboard_page(driver, env_config):
-    return perform_valid_login(driver, env_config["USERNAME"], env_config["PASSWORD"])
+    return UserLoginHelper.perform_valid_login(driver, env_config["USERNAME"], env_config["PASSWORD"])
 
 
-@pytest.fixture(scope="session", autouse=True)
-def configure_logging(worker_id):
-    os.makedirs("logs", exist_ok=True)
-
-    # Creating custom logger
-    test_logger = logging.getLogger()
-    test_logger.setLevel(logging.INFO)
-
-    # File handler
-    log_file = f"logs/{worker_id}.log"
-    file_handler = logging.FileHandler(log_file, mode='w')
-    file_formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(test_name)s - %(message)s")
-    file_handler.setFormatter(file_formatter)
-    file_handler.addFilter(test_name_filter)
-    test_logger.addHandler(file_handler)
-
-    # logs from selenium and urllib3
-    sel_handler = logging.FileHandler("logs/selenium.log", mode="w")
-    sel_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s"))
-
-    for name in ["selenium", "urllib3"]:
-        sel_urllib3_logger = logging.getLogger(name)
-        sel_urllib3_logger.setLevel(logging.WARNING)
-        sel_urllib3_logger.addHandler(sel_handler)
-        sel_urllib3_logger.propagate = False
-
-
-# Hook to set test name before each test
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_setup(item):
-    test_name_filter.set_test_name(item.name)
+    """ Hook to set test name before each test """
+    set_test_name(item.name)
+    yield
 
 
 @pytest.hookimpl(hookwrapper=True)
@@ -80,12 +53,28 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     report = outcome.get_result()
     # Attach screenshot if test failed
-    if report.when == "call" and report.failed:
+    if report.when == "call":
         driver = item.funcargs.get("driver", None)
         if driver:
-            screenshot_path = take_screenshot(driver, item.name)
-            if screenshot_path:
-                # Attach screenshot to report
-                extra = getattr(report, "extra", [])
+            test_name = item.name
+            status = "failed" if report.failed else "passed"
+            screenshot_path = ScreenshotManager.take_screenshot(driver, test_name, status)
+            extra = getattr(report, "extra", [])
+            if report.failed and screenshot_path:
+                print(f"Screenshotpath: {screenshot_path}")
                 extra.append(extras.image(screenshot_path))
-                report.extras = extra
+            report.extra = extra
+
+
+def pytest_configure(config):
+    """Dynamically set report path with test name and timestamp"""
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    time_str = datetime.now().strftime("%H-%M-%S")
+
+    reports_dir = os.path.join("reports", date_str)
+    os.makedirs(reports_dir, exist_ok=True)
+
+    report_file = f"test_report_{time_str}.html"
+    report_path = os.path.join(reports_dir, report_file)
+
+    config.option.htmlpath = report_path
